@@ -56,8 +56,9 @@ def prenota_concerto(utente):
         return
     print("Concerti disponibili:")
     # Mostra l'elenco dei concerti disponibili
-    for index, c in enumerate(concerti_registrati):
-        print(f"{index + 1}. {c['nome']} (Posti: {c['posti']})")
+    for i in range(len(concerti_registrati)):
+        c = concerti_registrati[i]
+        print(f"{i + 1}. {c['nome']} (Posti: {c['posti']})")
     scelta = int(input("Seleziona il numero del concerto da prenotare: ")) - 1
     if 0 <= scelta < len(concerti_registrati):  # Controlla se la scelta è valida
         concerto = concerti_registrati[scelta]
